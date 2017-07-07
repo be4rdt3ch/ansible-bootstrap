@@ -1,0 +1,22 @@
+---
+- hosts: nodes
+  become: true
+  become_user: root
+  roles:
+    - franklinkim.sudo
+
+  tasks:
+    - name: Add authorized key
+      authorized_key:
+        user: "{{ admin_user }}"
+        state: present
+        key: "{{ lookup('file', lookup('env', 'HOME') + '/.ssh/id_rsa.pub') }}"
+
+    - name: Install some packages
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - ntp
+        - vim-enhanced
+        - bind-utils

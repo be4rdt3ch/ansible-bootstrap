@@ -1,0 +1,15 @@
+node1 ansible_host=192.168.1.134
+node2 ansible_host=192.168.1.137
+node3 ansible_host=192.168.1.136
+
+[nodes]
+node1
+node2
+node3
+
+[nodes:vars]
+ansible_user=admin
+ansible_ssh_pass=welcome
+ansible_become=true
+ansible_become_pass=welcome
+ansible_become_user=root
