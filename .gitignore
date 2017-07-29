@@ -1,3 +1,6 @@
 inventory/
 !inventory/example.inventory
 roles/
+*.yml
+!site.yml
+!requirements.yml

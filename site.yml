@@ -20,3 +20,5 @@
         - ntp
         - vim-enhanced
         - bind-utils
+
+- include: local.yml
